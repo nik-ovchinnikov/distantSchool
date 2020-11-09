@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+                body{
+            margin: 0px;
+        }
+
+        header, div.middle_container
+        {
+            display: table;
+        }
+
+        div.header_corner
+        {
+            display: table-cell;
+            border: 2px solid #8EBB8C;
+            border-right-width: 0px;
+            min-width: 250px;
+            width: 250px;
+            height: 250px;
+            background-color: #FCEBEF;
+        }
+
+        div.header_back
+        {
+            display: table-cell;
+            border: 2px solid #8EBB8C;
+            height: 250px;
+            width: 1700px;
+            background-color: #CEE6DE;
+            vertical-align: middle;
+        }
+
+        p.header_text
+        {
+            text-align: center;
+            align: center;
+            font-size: 50px;
+            margin: 10px;
+            color: #304336;
+        }
+
+        p.header_text
+        {
+            font-color: #304336;
+        }
+
+        aside
+        {
+            display: table-cell;
+            min-width: 250px;
+            width: 250px;
+            background-color: #CEE6DE;
+            border: 2px solid #8EBB8C;
+            height: 1000px;
+            border-top-width: 0px;
+
+        }
+
+        section
+        {
+            display: table-cell;
+            width: 1700px;
+            background-color: #FCEBEF;
+            border: 2px solid #8EBB8C;
+            height: 1000px;
+            border-top-width: 0px;
+            border-left-width: 0px;
+
+        }
+
+        article.auth_container
+        {
+            text-align: center;
+            padding-bottom: 50px;
+            font-size: 20px;
+        }
+
+        button
+        {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 20px;
+            border: 3px solid #E8A45B;
+            background-color: #EED0B3;
+            border-radius: 20px;
+            color: #DA7254;
+        }
+
+        button:hover
+        {
+            padding: 10px;
+            font-size: 20px;
+            border: 3px solid #E8A45B;
+            background-color: #E8A45B;
+            border-radius: 20px;
+            color: #EED0B3;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header_corner">
+
+    </div>
+    <div class="header_back">
+            <p class="header_text">Воскресная школа<br>Вознесенской Давидовой Пустыни</p>
+    </div>
+</header>
+
+<div class="middle_container">
+    <aside>
+
+    </aside>
+    <section>
+        <article class="auth_container">
+
+            <h2>Данные внесены успешно!</h2>
+            <a href="uchitel">Вернуться в кабинет</a>
+
+        </article>
+    </section>
+</div>
+
+<script type="text/javascript">
+
+    setTimeout(()=> {window.location.replace("/shkola");}, 5000)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body{
+            margin: 0px;
+        }
+
+        header, div.middle_container
+        {
+            display: table;
+        }
+
+        div.header_corner
+        {
+            display: table-cell;
+            border: 2px solid #8EBB8C;
+            border-right-width: 0px;
+            min-width: 250px;
+            width: 250px;
+            height: 250px;
+            background-color: #FCEBEF;
+        }
+
+        div.header_back
+        {
+            display: table-cell;
+            border: 2px solid #8EBB8C;
+            height: 250px;
+            width: 1700px;
+            background-color: #CEE6DE;
+            vertical-align: middle;
+        }
+
+        p.header_text
+        {
+            text-align: center;
+            align: center;
+            font-size: 50px;
+            margin: 10px;
+            color: #304336;
+        }
+
+        p.header_text
+        {
+            font-color: #304336;
+        }
+
+        aside
+        {
+            display: table-cell;
+            min-width: 250px;
+            width: 250px;
+            background-color: #CEE6DE;
+            border: 2px solid #8EBB8C;
+            height: 1000px;
+            border-top-width: 0px;
+
+        }
+
+        section
+        {
+            display: table-cell;
+            width: 1700px;
+            background-color: #FCEBEF;
+            border: 2px solid #8EBB8C;
+            height: 1000px;
+            border-top-width: 0px;
+            border-left-width: 0px;
+
+        }
+
+        article.auth_container
+        {
+            display: table-cell;
+            height: 100px;
+            width: 1700px;
+            padding: 10px;
+            margin: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        a
+        {
+            margin: 30px;
+        }
+
+        button.user_auth
+        {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 20px;
+            border: 3px solid #E8A45B;
+            background-color: #EED0B3;
+            border-radius: 20px;
+            color: #DA7254;
+        }
+
+        button.user_auth:hover
+        {
+            padding: 10px;
+            font-size: 20px;
+            border: 3px solid #E8A45B;
+            background-color: #E8A45B;
+            border-radius: 20px;
+            color: #EED0B3;
+        }
+
+        h1
+        {
+            font-size: 25px;
+            color: #304336;
+            padding-top: 40px;
+        }
+
+        caption
+        {
+            font-size: 25px;
+            color: #304336;
+            padding-bottom: 5px;
+        }
+
+        table
+        {
+            background-color: whitesmoke;
+            border: #304336 solid 1px;
+
+        }
+
+        th, td
+        {
+            background-color: whitesmoke;
+            border: #304336 solid 1px;
+            margin: 0px;
+            padding: 2px;
+            font-size: 20px;
+            color: #000033;
+        }
+        div#table_div
+        {
+
+        }
+    </style>
+</head>
+<body>
+<div  id="forTable1">
+<header>
+    <div class="header_corner">
+
+    </div>
+    <div class="header_back">
+            <p class="header_text">Воскресная школа<br>Вознесенской Давидовой Пустыни</p>
+    </div>
+</header>
+<div class="middle_container">
+    <aside>
+
+    </aside>
+    <section>
+        <article class="auth_container">
+
+        {% if user.is_authenticated %}
+                <a href ="logout"><button class="user_auth"> Выйти ({{ user.imya }})</button></a>
+            {% else %}
+                <a href ="register"><button class="user_auth">Регистрация на сайте</button></a>
+                <a href ="login"><button class="user_auth">Авторизация</button></a>
+            {% endif %}
+
+            <h1>{{ greeting }} {{ user.imya }}  {{ user.otchestvo }}!! </h1>
+            <div class="table_div">
+                <table>
+                        <caption>Все уроки школы</caption>
+                          <tr>
+                            <th>Дата</th>
+                            <th>№ урока п/п</th>
+                            <th>Класс</th>
+                            <th>Преподаватель</th>
+                            <th>Время начала</th>
+                            <th>Название предмета</th>
+                            <th>Тема урока</th>
+                            <th>Класс</th>
+                            <th>Комментарий</th>
+                            <th>Ссылка на урок</th>
+                          </tr>
+                            {% for urok in uroki %}
+                          <tr>
+                            <td>{{urok.date_field }}</td>
+                            <td>{{urok.nomer_uroka }}</td>
+                            <td>{{urok.nomer_klassa }}</td>
+                            <td>{{urok.prepodavatel }}</td>
+                            <td>{{urok.vremya_nachala_uroka }}</td>
+                            <td>{{urok.nazvanie_predmeta }}</td>
+                            <td>{{urok.tema_uroka }}</td>
+                            <td>{{urok.nomer_klassa }}</td>
+                            <td>{{ urok.kommentaryi }}</td>
+                            <td>{{ urok.ssylka_na_urok }}</td>
+                          </tr>
+                            {% endfor %}
+
+                    </table>
+                            </div>
+        </article>
+    </section>
+</div>
+
+
+</div>
+</body>
+</html>
